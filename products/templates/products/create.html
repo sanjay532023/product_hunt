@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% block content %}
+<br>
+<br>
+<br>
+<h1 class="text-muted"> Create App Details:</h1><br />
+{{error}}
+<form method="POST" action="{% url 'create' %}" enctype="multipart/form-data" class="text-muted"><br />
+    {% csrf_token %}
+    Title: <br />
+    <input type="text" name="title"/>
+    <br /><br />
+
+    Body: <br />
+    <input type="textbox" name="body"><br /><br />
+
+    Url: <br />
+    <input type="text" name="url"/>
+    <br /><br />
+
+    Icon: <br />
+    <input type="file" name="icon"/>
+    <br /><br />
+
+    Image: <br />
+    <input type="file" name="image"/>
+    <br /><br />
+
+    <input class="btn btn-primary" type="submit" value="Upload"/>
+
+</form>
+<br />
+{% endblock %}
